@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './App.css';
+import planetsContext from './context/PlanetsContext';
+import Table from './components/Table';
 
 function App() {
+  const { fetchData } = useContext(planetsContext);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <span>Hello App!</span>
+    <>
+      <h1>Hello App!</h1>
+      <Table />
+    </>
   );
 }
 
