@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <h1>Hello App!</h1>
+      <h1>Star Wars Planets</h1>
       <Table />
     </>
   );

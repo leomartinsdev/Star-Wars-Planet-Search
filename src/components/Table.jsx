@@ -3,12 +3,24 @@ import React, { useContext } from 'react';
 import planetsContext from '../context/PlanetsContext';
 
 function Table() {
-  const { planets } = useContext(planetsContext);
-  console.log(planets);
+  const { planets, planetInput, setPlanetInput } = useContext(planetsContext);
+  console.log('planetas', planets);
 
   return (
     <div>
-      <p>Table Component</p>
+      <div>
+        <input
+          type="text"
+          name="planetInput"
+          id="planetInput"
+          placeholder="Filtrar por nome"
+          data-testid="name-filter"
+          value={ planetInput }
+          onChange={ (e) => {
+            setPlanetInput(e.currentTarget.value);
+          } }
+        />
+      </div>
       { planets.length > 0 && (
         <table>
           <thead>
@@ -18,25 +30,25 @@ function Table() {
             </tr>
           </thead>
           <tbody>
-            {
-              planets.map((planet) => (
-                <tr key={ planet.name }>
-                  <td>{ planet.name }</td>
-                  <td>{ planet.rotation_period }</td>
-                  <td>{ planet.orbital_period }</td>
-                  <td>{ planet.diameter }</td>
-                  <td>{ planet.climate }</td>
-                  <td>{ planet.gravity }</td>
-                  <td>{ planet.terrain }</td>
-                  <td>{ planet.surface_water }</td>
-                  <td>{ planet.population }</td>
-                  <td>{ planet.films }</td>
-                  <td>{ planet.created }</td>
-                  <td>{ planet.edited }</td>
-                  <td>{ planet.url }</td>
+            { planets.filter((planet) => planet.name
+              .toLowerCase().includes(planetInput.toLowerCase()))
+              .map((planeta) => (
+                <tr key={ planeta.name }>
+                  <td>{ planeta.name }</td>
+                  <td>{ planeta.rotation_period }</td>
+                  <td>{ planeta.orbital_period }</td>
+                  <td>{ planeta.diameter }</td>
+                  <td>{ planeta.climate }</td>
+                  <td>{ planeta.gravity }</td>
+                  <td>{ planeta.terrain }</td>
+                  <td>{ planeta.surface_water }</td>
+                  <td>{ planeta.population }</td>
+                  <td>{ planeta.films }</td>
+                  <td>{ planeta.created }</td>
+                  <td>{ planeta.edited }</td>
+                  <td>{ planeta.url }</td>
                 </tr>
-              ))
-            }
+              ))}
           </tbody>
         </table>)}
     </div>
