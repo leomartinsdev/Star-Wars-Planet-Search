@@ -23,7 +23,50 @@ function PlanetsProvider({ children }) {
   // estado para guardar o nome que está sendo filtrado
   const [planetInput, setPlanetInput] = useState('');
 
-  const values = { planets, setPlanets, fetchData, planetInput, setPlanetInput };
+  // estado genérico para os inputs dos Filtros
+  const [selected, setSelected] = useState({
+    column: 'population',
+    comparison: 'maior que',
+    value: 0,
+  });
+
+  // estado para guardar os filtros ativos
+  const [activeFilters, setActiveFilters] = useState([]);
+
+  // função para tratar os dados e filtra-los de acordo com o que o usuário selecionou
+  const dataFilter = (linha) => {
+    console.log('Linha:', linha);
+    const bools = [];
+
+    activeFilters.forEach((filter) => {
+      switch (filter.comparison) {
+      case 'maior que':
+        bools.push(Number(linha[filter.column]) > filter.value);
+        break;
+      case 'menor que':
+        bools.push(Number(linha[filter.column]) < filter.value);
+        break;
+      case 'igual a':
+        bools.push(linha[filter.column] === filter.value.toUpperCase());
+        break;
+      default:
+        return true;
+      }
+    });
+
+    return bools.every((el) => el);
+  };
+
+  const values = { planets,
+    setPlanets,
+    fetchData,
+    planetInput,
+    setPlanetInput,
+    selected,
+    setSelected,
+    activeFilters,
+    setActiveFilters,
+    dataFilter };
   return (
     <planetsContext.Provider value={ values }>
       { children }
