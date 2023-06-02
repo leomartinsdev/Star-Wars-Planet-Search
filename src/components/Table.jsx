@@ -71,9 +71,9 @@ function Table() {
           onClick={ () => {
             setActiveFilters([...activeFilters, selected]);
             setSelected({
-              column: '',
-              comparison: '',
-              value: '',
+              column: 'comparison',
+              comparison: 'maior que',
+              value: 0,
             });
           } }
         >
