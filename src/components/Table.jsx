@@ -71,7 +71,7 @@ function Table() {
           onClick={ () => {
             setActiveFilters([...activeFilters, selected]);
             setSelected({
-              column: 'comparison',
+              column: 'population',
               comparison: 'maior que',
               value: 0,
             });
@@ -83,6 +83,13 @@ function Table() {
       {
         activeFilters.map((filter, index) => (
           <div key={ index }>
+            <span>
+              {filter.column}
+              {' '}
+              {filter.comparison}
+              {' '}
+              {filter.value}
+            </span>
             <button
               onClick={ () => {
                 const clonedArray = [...activeFilters];
@@ -92,13 +99,6 @@ function Table() {
             >
               REMOVER FILTRO
             </button>
-            <span>
-              {filter.column}
-              {' '}
-              {filter.comparison}
-              {' '}
-              {filter.value}
-            </span>
           </div>
         ))
       }
