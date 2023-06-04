@@ -5,8 +5,16 @@ import planetsContext from '../context/PlanetsContext';
 function Table() {
   const { planets, planetInput, setPlanetInput,
     selected, setSelected, activeFilters, setActiveFilters,
-    dataFilter } = useContext(planetsContext);
+    dataFilter, tratarOptions } = useContext(planetsContext);
   console.log('planetas', planets);
+
+  const selectOptions = [
+    'population',
+    'orbital_period',
+    'diameter',
+    'rotation_period',
+    'surface_water',
+  ];
 
   return (
     <div>
@@ -33,11 +41,11 @@ function Table() {
             setSelected({ ...selected, column: e.target.value });
           } }
         >
-          <option value="population">population</option>
-          <option value="orbital_period">orbital_period</option>
-          <option value="diameter">diameter</option>
-          <option value="rotation_period">rotation_period</option>
-          <option value="surface_water">surface_water</option>
+          {selectOptions.filter(tratarOptions).map((column) => (
+            <option value={ column } key={ column }>
+              {column}
+            </option>
+          ))}
         </select>
 
         <select

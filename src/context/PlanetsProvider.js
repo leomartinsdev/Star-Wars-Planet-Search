@@ -61,6 +61,10 @@ function PlanetsProvider({ children }) {
     return bools.every((el) => el);
   };
 
+  // tratar options do Select: isso previne que o usuário consiga usar filtros duplicados
+  const tratarOptions = (opcao) => !activeFilters
+    .find((filtro) => opcao === filtro.column);
+
   const values = { planets,
     setPlanets,
     planetInput,
@@ -69,7 +73,8 @@ function PlanetsProvider({ children }) {
     setSelected,
     activeFilters,
     setActiveFilters,
-    dataFilter };
+    dataFilter,
+    tratarOptions };
   return (
     <planetsContext.Provider value={ values }>
       { children }
