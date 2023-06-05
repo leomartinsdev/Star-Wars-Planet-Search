@@ -84,12 +84,28 @@ function Table() {
             });
           } }
         >
-          Filtrar
+          FILTRAR
+        </button>
+
+        <button
+          type="button"
+          data-testid="button-remove-filters"
+          onClick={ () => {
+            setActiveFilters([]);
+            setSelected({
+              column: 'population',
+              comparison: 'maior que',
+              value: 0,
+            });
+          } }
+
+        >
+          REMOVER FILTROS
         </button>
       </div>
       {
         activeFilters.map((filter, index) => (
-          <div key={ index }>
+          <div key={ index } data-testid="filter">
             <span>
               {filter.column}
               {' '}
@@ -104,7 +120,7 @@ function Table() {
                 setActiveFilters(clonedArray);
               } }
             >
-              REMOVER FILTRO
+              X
             </button>
           </div>
         ))

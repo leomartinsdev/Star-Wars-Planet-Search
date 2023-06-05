@@ -76,14 +76,6 @@ describe('App tests', () => {
 
     const rowsAfterFilter = screen.getAllByRole('row');
     expect(rowsAfterFilter.length).toBe(5);
-
-    // userEvent.selectOptions(columnFilter, 'rotation_period');
-    // userEvent.selectOptions(comparisonFilter, 'igual a');
-    // userEvent.type(valueFilter, '23');
-    // userEvent.click(filterBtn);
-
-    // const rows3rdFilter = screen.getAllByRole('row');
-    // expect(rows3rdFilter.length).toBe(2);
   });
 
   test('Testa se, no começo, todos planetas aparecem', async () => {
