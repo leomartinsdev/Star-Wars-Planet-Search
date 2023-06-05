@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-// import PropTypes from 'prop-types';
 import planetsContext from '../context/PlanetsContext';
 
 function Table() {
@@ -144,7 +143,5 @@ function Table() {
     </div>
   );
 }
-
-// Table.propTypes = {};
 
 export default Table;

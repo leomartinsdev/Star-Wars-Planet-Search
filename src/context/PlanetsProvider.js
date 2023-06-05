@@ -15,6 +15,7 @@ function PlanetsProvider({ children }) {
         const planetsObj = json.results; // essa constante contém um array de objetos, onde cada objeto é um planeta. Preciso remover a chave residents de cada um.
         planetsObj.map((planet) => delete planet.residents);
         setPlanets(planetsObj);
+        console.log(planetsObj);
       } catch (error) {
         console.log(error);
       }
