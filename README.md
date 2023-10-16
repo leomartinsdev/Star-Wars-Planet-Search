@@ -5,7 +5,7 @@ O gerenciamento de estados foi feito utilizando Context API.
 <br>
 
 ## 💻 Acesse esse projeto:
-[Star Wars Planet Search](star-wars-planet-search-leonardomartins.vercel.app)
+[Star Wars Planet Search](https://star-wars-planet-search-leonardomartins.vercel.app/)
 
 ## 👨‍💻 Tecnologias usadas:
 JavaScript, JSX, React, Context API, Componentes Funcionais e HTML5.
