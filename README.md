@@ -1,10 +1,11 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Star Wars Planet Search 🪐
+Aplicativo onde é possível visualizar os planetas do universo Star Wars e filtra-los por população, período orbital, diâmetro, período de rotação e se a superfício tem água ou não.
+Os filtros podem ser sobrepostos e removidos na ordem que quiser, sendo possível remover todos de uma vez.
+O gerenciamento de estados foi feito utilizando Context API.
+<br>
+
+## 💻 Acesse esse projeto:
+[Star Wars Planet Search](star-wars-planet-search-leonardomartins.vercel.app)
+
+## 👨‍💻 Tecnologias usadas:
+JavaScript, JSX, React, Context API, Componentes Funcionais e HTML5.
