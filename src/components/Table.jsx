@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import planetsContext from '../context/PlanetsContext';
+import '../styles/Table.css';
 
 function Table() {
   const { planets, planetInput, setPlanetInput,
@@ -17,7 +18,7 @@ function Table() {
 
   return (
     <div>
-      <div>
+      <div id='div-1'>
         <input
           type="text"
           name="planetInput"
@@ -30,7 +31,7 @@ function Table() {
           } }
         />
       </div>
-      <div>
+      <div id='div-2'>
         <select
           name="columnFilter"
           id="columnFilter"

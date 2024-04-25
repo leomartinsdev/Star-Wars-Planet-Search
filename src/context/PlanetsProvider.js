@@ -12,7 +12,7 @@ function PlanetsProvider({ children }) {
         const data = await fetch('https://swapi.dev/api/planets');
         const json = await data.json();
         console.log('fez o fetch');
-        const planetsObj = json.results; // essa constante contém um array de objetos, onde cada objeto é um planeta. Preciso remover a chave residents de cada um.
+        const planetsObj = json.results; // essa constante contém um array de objetos, onde cada objeto é um planeta.
         planetsObj.map((planet) => delete planet.residents);
         setPlanets(planetsObj);
         console.log(planetsObj);
@@ -21,10 +21,7 @@ function PlanetsProvider({ children }) {
       }
     };
     fetchData();
-    console.log('passou x');
   }, []);
-
-  // Fetch da API e tratamento do retorno para que a chave residents seja excluída.
 
   // estado para guardar o nome que está sendo filtrado
   const [planetInput, setPlanetInput] = useState('');
@@ -62,11 +59,11 @@ function PlanetsProvider({ children }) {
     return bools.every((el) => el);
   };
 
-  // tratar options do Select: isso previne que o usuário consiga usar filtros duplicados
-  const tratarOptions = (opcao) => !activeFilters
-    .find((filtro) => opcao === filtro.column);
+  // eslint-disable-next-line max-len
+  const tratarOptions = (opcao) => !activeFilters.find((filtro) => opcao === filtro.column);
 
-  const values = { planets,
+  const values = {
+    planets,
     setPlanets,
     planetInput,
     setPlanetInput,
@@ -75,11 +72,10 @@ function PlanetsProvider({ children }) {
     activeFilters,
     setActiveFilters,
     dataFilter,
-    tratarOptions };
+    tratarOptions,
+  };
   return (
-    <planetsContext.Provider value={ values }>
-      { children }
-    </planetsContext.Provider>
+    <planetsContext.Provider value={ values }>{children}</planetsContext.Provider>
   );
 }
 

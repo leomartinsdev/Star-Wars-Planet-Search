@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-// import planetsContext from './context/PlanetsContext';
 import Table from './components/Table';
 
 function App() {
   return (
-    <>
-      <h1>Star Wars Planets</h1>
+    <div id="header-div">
+      <h1 id="main-h1">Star Wars Planets</h1>
       <Table />
-    </>
+    </div>
   );
 }
 
