@@ -27,10 +27,10 @@ function Table() {
             className="styled-input neon-focus"
             placeholder="SEARCH PLANET..."
             data-testid="name-filter"
-            value={planetInput}
-            onChange={(e) => {
+            value={ planetInput }
+            onChange={ (e) => {
               setPlanetInput(e.currentTarget.value);
-            }}
+            } }
           />
         </div>
         <div className="numeric-filters-group">
@@ -39,13 +39,13 @@ function Table() {
             id="columnFilter"
             className="styled-select neon-focus"
             data-testid="column-filter"
-            value={selected.column}
-            onChange={(e) => {
+            value={ selected.column }
+            onChange={ (e) => {
               setSelected({ ...selected, column: e.target.value });
-            }}
+            } }
           >
             {selectOptions.filter(tratarOptions).map((column) => (
-              <option value={column} key={column}>
+              <option value={ column } key={ column }>
                 {column.toUpperCase()}
               </option>
             ))}
@@ -56,10 +56,10 @@ function Table() {
             id="comparisonFilter"
             className="styled-select neon-focus"
             data-testid="comparison-filter"
-            value={selected.comparison}
-            onChange={(e) => {
+            value={ selected.comparison }
+            onChange={ (e) => {
               setSelected({ ...selected, comparison: e.target.value });
-            }}
+            } }
           >
             <option value="maior que">GREATER THAN</option>
             <option value="menor que">LESS THAN</option>
@@ -72,24 +72,24 @@ function Table() {
             id="valueFilter"
             className="styled-input num-input neon-focus"
             data-testid="value-filter"
-            value={selected.value}
-            onChange={(e) => {
+            value={ selected.value }
+            onChange={ (e) => {
               setSelected({ ...selected, value: e.target.value });
-            }}
+            } }
           />
 
           <button
             type="button"
             className="styled-button neon-button"
             data-testid="button-filter"
-            onClick={() => {
+            onClick={ () => {
               setActiveFilters([...activeFilters, selected]);
               setSelected({
                 column: 'population',
                 comparison: 'maior que',
                 value: 0,
               });
-            }}
+            } }
           >
             APPLY FILTER
           </button>
@@ -98,14 +98,14 @@ function Table() {
             type="button"
             className="styled-button neon-button-danger"
             data-testid="button-remove-filters"
-            onClick={() => {
+            onClick={ () => {
               setActiveFilters([]);
               setSelected({
                 column: 'population',
                 comparison: 'maior que',
                 value: 0,
               });
-            }}
+            } }
           >
             CLEAR ALL
           </button>
@@ -115,17 +115,21 @@ function Table() {
       <div className="active-filters-area">
         {
           activeFilters.map((filter, index) => (
-            <div key={index} className="filter-tag" data-testid="filter">
+            <div key={ index } className="filter-tag" data-testid="filter">
               <span>
-                {filter.column} {filter.comparison} {filter.value}
+                {filter.column}
+                {' '}
+                {filter.comparison}
+                {' '}
+                {filter.value}
               </span>
               <button
                 className="tag-remove-btn"
-                onClick={() => {
+                onClick={ () => {
                   const clonedArray = [...activeFilters];
                   clonedArray.splice(index, 1);
                   setActiveFilters(clonedArray);
-                }}
+                } }
               >
                 ×
               </button>
@@ -140,7 +144,7 @@ function Table() {
             <thead>
               <tr>
                 {Object.keys(planets[0])
-                  .map((column, index) => <th key={index}>{column.toUpperCase()}</th>)}
+                  .map((column, index) => <th key={ index }>{column.toUpperCase()}</th>)}
               </tr>
             </thead>
             <tbody>
@@ -148,7 +152,7 @@ function Table() {
                 .toLowerCase().includes(planetInput.toLowerCase()))
                 .filter(dataFilter)
                 .map((planeta) => (
-                  <tr key={planeta.name}>
+                  <tr key={ planeta.name }>
                     <td>{planeta.name}</td>
                     <td>{planeta.rotation_period}</td>
                     <td>{planeta.orbital_period}</td>
