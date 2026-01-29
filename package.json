@@ -22,9 +22,9 @@
     ]
   },
   "scripts": {
-    "cy": "env CY_CLI=true cypress run",
+    "cy": "cross-env CY_CLI=true cypress run",
     "cy:open": "cypress open --e2e --browser chrome",
-    "start": "env ESLINT_NO_DEV_ERRORS=true react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@sheerun/mutationobserver-shim": "0.3.3",
     "@trybe/eslint-config-frontend": "^1.7.1",
+    "cross-env": "^10.1.0",
     "cypress": "^10.11.0",
     "cypress-multi-reporters": "^1.6.2",
     "mocha": "^10.2.0",
