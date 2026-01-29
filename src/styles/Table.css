@@ -1,7 +1,248 @@
-#div-1 {
-  border: 1px solid red;
+/* ============================================
+   DARK PORTAL THEME - DATA COMPONENTS
+   Professional News-Site Aesthetic
+   ============================================ */
+
+.table-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-#div-2 {
-  border: 1px solid yellow;
+/* ============================================
+   CONTROL PANEL (News Card Style)
+   ============================================ */
+
+.filters-glass-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  /* Top border accent like reference site categories */
+  border-top: 3px solid var(--sw-yellow);
+  border-radius: 2px;
+  /* Sharp corners */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+
+.search-group,
+.numeric-filters-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search-group {
+  width: 100%;
+}
+
+.search-group input {
+  width: 100%;
+}
+
+/* ============================================
+   INPUTS (Dark Mode Professional)
+   ============================================ */
+
+.styled-input,
+.styled-select {
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--input-border);
+  padding: 0.8rem 1rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  border-radius: 0;
+  /* Square "Digital" look */
+  transition: all 0.2s;
+  height: 48px;
+}
+
+.styled-input:focus,
+.styled-select:focus {
+  outline: none;
+  border-color: var(--sw-yellow);
+  background: #2A2A2A;
+}
+
+.styled-input::placeholder {
+  color: #666;
+}
+
+.styled-select {
+  cursor: pointer;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23FFE81F' d='M6 8.825L1.175 4 2.238 2.938 6 6.7 9.763 2.938 10.825 4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  appearance: none;
+}
+
+.num-input {
+  width: 140px;
+}
+
+/* ============================================
+   BUTTONS (Classic Star Wars)
+   ============================================ */
+
+.styled-button {
+  padding: 0 2rem;
+  height: 48px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 0;
+  /* Square */
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+
+.neon-button {
+  /* Yellow Button with Black Text - High Visibility */
+  background-color: var(--sw-yellow);
+  color: #000000;
+  border: 2px solid var(--sw-yellow);
+}
+
+.neon-button:hover {
+  background-color: transparent;
+  color: var(--sw-yellow);
+}
+
+.neon-button:active {
+  transform: scale(0.98);
+}
+
+.neon-button-danger {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #888;
+}
+
+.neon-button-danger:hover {
+  border-color: #CC0000;
+  color: #CC0000;
+}
+
+/* ============================================
+   ACTIVE FILTERS
+   ============================================ */
+
+.active-filters-area {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  min-height: 20px;
+}
+
+.filter-tag {
+  background: transparent;
+  color: var(--sw-yellow);
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--sw-yellow);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.tag-remove-btn {
+  background: none;
+  border: none;
+  color: var(--sw-yellow);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.tag-remove-btn:hover {
+  color: white;
+}
+
+/* ============================================
+   DATA TABLE (News List Style)
+   ============================================ */
+
+.table-container {
+  width: 100%;
+  background: var(--bg-panel);
+  border-top: 3px solid var(--portal-blue);
+  /* Subtle Blue Accent */
+  overflow-x: auto;
+}
+
+.planets-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.planets-table th {
+  background-color: #111111;
+  color: var(--sw-yellow);
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.planets-table td {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+/* Improved Row Readability */
+.planets-table tbody tr:nth-child(even) {
+  background-color: #151515;
+  /* Very subtle alternation */
+}
+
+.planets-table tbody tr:hover {
+  background-color: #222222;
+}
+
+/* Emphasize the Planet Name */
+.planets-table td:first-child {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .numeric-filters-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .num-input,
+  .styled-select {
+    width: 100%;
+  }
 }

@@ -1,14 +1,43 @@
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-#header-div {
-  background-color: #282c34;
-  color: white;
+.app-container {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 1200px;
+  /* Standard Website Width */
+  margin: 0 auto;
+}
+
+.app-header {
   text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--sw-yellow);
+  /* Yellow separator like nav items */
+  position: relative;
+}
+
+.app-title {
+  font-family: 'Oswald', sans-serif;
+  /* Blocky Headline Font */
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: var(--sw-yellow);
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  /* Solid shadow for pop */
+}
+
+.app-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--portal-blue);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
 }
